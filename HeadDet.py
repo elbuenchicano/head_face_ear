@@ -64,7 +64,6 @@ def coxhead(info, local_pt, model):
                 probs.append(0)
                 bbox.append([0,0,0,0])
 
-            break
 
         #..........................................................................................
         # saving view data on pandas json        

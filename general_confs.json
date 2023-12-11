@@ -4,7 +4,7 @@
     "directory"     : "Head_face_ear",
     "prefix_path"   : {
         "win"   : "I:/research",
-        "linux" : "/mnt/users/rensso"
+        "linux" : "/mnt/users/rensso/research"
         },
     
     "cox"   : {
