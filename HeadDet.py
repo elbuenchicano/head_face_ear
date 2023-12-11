@@ -50,7 +50,7 @@ def coxhead(info, local_pt, model):
             im_pt   = db_pt + pt
             results = model.predict(im_pt) 
 
-            if len(results):
+            if results[0].probs != None:
                 xyxy        = results[0].boxes.xyxy.cpu().numpy()
                 xyxy        = np.rint(xyxy[0]).astype(int)
                 prob        = np.round(results[0].boxes.conf[0].item(), 2)

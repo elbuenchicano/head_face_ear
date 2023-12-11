@@ -7,8 +7,8 @@ from    control         import *
 ############################### MAIN ##############################################################
 def main():
     
-    funcdict    = { 'initCox': initCox, 
-                    'headDetection': headDetection
+    funcdict    = { 'initCox'       : initCox, 
+                    'headDetection' : headDetection
                    }
     
     print('_______________________________________')
