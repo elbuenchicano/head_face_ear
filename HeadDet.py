@@ -46,11 +46,11 @@ def coxhead(info, local_pt, model):
         bbox    = []
         probs   = []
 
-        for _, pt in tqdm(view, name):
+        for _, pt in tqdm(view[340:], name):
             im_pt   = db_pt + pt
             results = model.predict(im_pt) 
 
-            if results[0].probs != None:
+            if results[0].boxes.shape[0] != 0:
                 xyxy        = results[0].boxes.xyxy.cpu().numpy()
                 xyxy        = np.rint(xyxy[0]).astype(int)
                 prob        = np.round(results[0].boxes.conf[0].item(), 2)
