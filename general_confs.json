@@ -1,0 +1,16 @@
+{
+    "function": "headDetection",
+
+    "directory"     : "Head_face_ear",
+    "prefix_path"   : {
+        "win"   : "I:/research",
+        "linux" : "/mnt/users/rensso"
+        },
+    
+    "cox"   : {
+        "db_pts": {
+            "win"   : "I:/research/Bio/db/cox/data",
+            "linux" : "/storage/datasets/faces/cox/data"
+        }
+    }
+}
