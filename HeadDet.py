@@ -46,9 +46,9 @@ def coxhead(info, local_pt, model):
         bbox    = []
         probs   = []
 
-        for _, pt in tqdm(view[340:], name):
+        for _, pt in tqdm(view, name):
             im_pt   = db_pt + pt
-            results = model.predict(im_pt) 
+            results = model.predict(im_pt, verbose=False) 
 
             if results[0].boxes.shape[0] != 0:
                 xyxy        = results[0].boxes.xyxy.cpu().numpy()
