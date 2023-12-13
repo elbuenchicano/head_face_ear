@@ -8,7 +8,8 @@ from    control         import *
 def main():
     
     funcdict    = { 'initCox'       : initCox, 
-                    'headDetection' : headDetection
+                    'headDetection' : headDetection,
+                    'faceDetection' : faceDetection
                    }
     
     print('_______________________________________')

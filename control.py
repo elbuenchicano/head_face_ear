@@ -6,6 +6,7 @@ Configurations of these functions are in the ####_confs.json
 from    utils                   import *
 from    CoxSetup                import *
 from    HeadDet                 import *
+from    FaceDet                 import *
 
 ####################################################################################################
 ####################################################################################################
@@ -26,10 +27,18 @@ def headDetection(confs):
     cox_if      = u_loadJson(cox_if_pt)
 
     yoloHeadDet(cox_if, dir)
-
     u_saveDict2File(cox_if_pt, cox_if)
 
-    
+#### Face detection ################################################################################   
+#### 
+# this function is after head detection
+def faceDetection(confs):
+    dir         = confs['prefix_path'][u_whichOS()] + '/' + confs['directory']
+    cox_if_pt   = dir + '/cox/cox_info.json'
+    cox_if      = u_loadJson(cox_if_pt)
+
+    mtcnnFaceDet(cox_if, dir)
+    u_saveDict2File(cox_if_pt, cox_if)
 
     
 

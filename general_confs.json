@@ -1,5 +1,5 @@
 {
-    "function": "headDetection",
+    "function": "faceDetection",
 
     "directory"     : "Head_face_ear",
     "prefix_path"   : {

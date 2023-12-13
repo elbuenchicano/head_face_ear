@@ -72,13 +72,12 @@ def coxhead(info, local_pt, model):
         df.to_json(local_pt + view_pt)
         
         # updating cox info dict    
-        info[f'/{name}head_pt'] = view_pt
+        info[f'{name}head_pt'] = view_pt
 
     #..........................................................................................
             
-
 #---------------------------------------------------------------------------------------------------
-#---------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------|-
 def yoloHeadDet(info, dir):
     '''
     It receives the dict with pandas paths, dir is the general directory
@@ -88,7 +87,7 @@ def yoloHeadDet(info, dir):
 
     coxhead(info, local_pt, model)
     
-    
+   
     
 
 
