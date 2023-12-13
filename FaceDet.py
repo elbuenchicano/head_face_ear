@@ -39,6 +39,9 @@ def coxface(info, local_pt, model):
         bbox    = []
         probs   = []
 
+        #view = view[5196:]
+        #head = head[5196:]
+
         for (_, pt), (head_prop, bb)  in tqdm(zip(view, head), name):
             
             if head_prop:
@@ -47,17 +50,23 @@ def coxface(info, local_pt, model):
                 im      = np.transpose(im, (1,2,0))
                 hd      = im[bb[1]:bb[3], bb[0]:bb[2]]
 
-                bb, pb  = model.detect(hd)#landmarks=True
+                try:
+                    bb, pb  = model.detect(hd)#landmarks=True
             
-                if pb[0] != None:
-                    pb  = np.around(pb[0], 2)
-                    bb  = np.rint(bb[0].tolist()).astype(int)
-                    # x = hd[bb[1]:bb[3],bb[0]:bb[2]] just to show    
+                    if pb[0] != None:
+                        pb  = np.around(pb[0], 2)
+                        bb  = np.rint(bb[0].tolist()).astype(int)
+                        # x = hd[bb[1]:bb[3],bb[0]:bb[2]] just to show    
 
-                    probs.append(pb)
-                    bbox.append(bb)
+                        probs.append(pb)
+                        bbox.append(bb)
 
-                else :
+                    else :
+                        probs.append(0)
+                        bbox.append([0,0,0,0])
+
+                except:
+
                     probs.append(0)
                     bbox.append([0,0,0,0])
 
